@@ -1,0 +1,32 @@
+%Ocean Sciences 2016 Plots
+%Plots complete wave time-series & also segments where we had lidar data
+%Label wave events in Powerpoint
+
+%% Figure 1A
+figure(1)
+subplot(2,1,1)
+plot(wavedatawac04.time,wavedatawac04.hs);
+datetick('x','keeplimits')
+hold on
+plot([wavedatawac04.time(47) wavedatawac04.time(47)],[0 6],[wavedatawac04.time(111) wavedatawac04.time(111)],[0 6],'m','linewidth',2)
+ylabel('Significant Wave Height (m)'},'fontsize',14) % left y-axis
+set(hAx1(1),'fontsize',14,'xLim',[0 654]);
+set(hAx1(2),'fontsize',14,'xLim',[0 654]);
+hAx1(1).YTick = [0 1 2 3 4 5];
+hAx1(2).YTick = [0 4 8 12 16 20];
+title('11 m AWAC Wave Height & Period')
+
+subplot(2,1,2)
+[hAx1,hLine1,hLine2]=plotyy(1:654,Hs_11mAWAC,1:654,Tp_11mAWAC);
+hLine1.LineWidth = 2;
+hLine2.LineWidth = 2;
+hLine2.LineStyle = ':';
+hold on
+plot([45 45],[0 5],[523 523],[0 5],'color','k','linewidth',2)
+ylabel(hAx1(1),{'Significant'; 'Wave Height (m)'},'fontsize',14) % left y-axis
+ylabel(hAx1(2),'Peak Period (s)','fontsize',14) % right y-axis
+set(hAx1(1),'fontsize',14,'xLim',[0 654]);
+set(hAx1(2),'fontsize',14,'xLim',[0 654]);
+hAx1(1).YTick = [0 1 2 3 4 5];
+hAx1(2).YTick = [0 4 8 12 16 20];
+title('11 m AWAC Wave Height & Period')
