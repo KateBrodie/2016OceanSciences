@@ -1,0 +1,62 @@
+%WaveEvent Slope Histograms
+
+%Katia: indices 46:135
+%Maria: indices 246:312
+%Low Amp, Med T: 313:384
+%Low Amp, Long T: 436:547
+%Nor'Easters: 548:654
+
+figure;
+subplot(2,5,1)
+histogram(-slope(indKatia),[0.025:0.01:0.2])
+ylabel('Counts')
+title({'Katia'; ['Mean \beta = ' sprintf('%.2f',mean(-slope(indKatia)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,2)
+histogram(-slope(indMaria),[0.025:0.01:0.2])
+title({'Maria';['Mean \beta = ' sprintf('%.2f',mean(-slope(indMaria)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,3)
+histogram(-slope(indLowAmpMedT),[0.025:0.01:0.2])
+xlabel('Foreshore Slope','fontsize',14)
+title({'Small, 8-10s Waves';[' Mean \beta = ' sprintf('%.2f',mean(-slope(indLowAmpMedT)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,4)
+histogram(-slope(indLowAmpLongT),[0.025:0.01:0.2])
+title({'Small, 10-12s Waves';[' Mean \beta = ' sprintf('%.2f',mean(-slope(indLowAmpLongT)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,5)
+histogram(Steepness_11mAWAC(indNorEaster),[0.025:0.01:0.2])
+title({'NorEasters';[' Mean \beta = ' sprintf('%.2f',mean(Steepness_11mAWAC(indNorEaster)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,6)
+histogram(Steepness_11mAWAC(indKatia),[0.001:0.001:0.05])
+ylabel('Counts')
+title({'Katia';[' Mean H/L = ' sprintf('%.2f',mean(Steepness_11mAWAC(indKatia)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,7)
+histogram(Steepness_11mAWAC(indMaria),[0.001:0.001:0.05])
+title({'Maria';[' Mean H/L = ' sprintf('%.2f',mean(Steepness_11mAWAC(indMaria)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,8)
+histogram(Steepness_11mAWAC(indLowAmpMedT),[0.001:0.001:0.05])
+xlabel('Wave Steepness 11m AWAC','fontsize',14)
+title({'Small, 8-10s Waves';[' Mean H/L = ' sprintf('%.2f',mean(Steepness_11mAWAC(indLowAmpMedT)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,9)
+histogram(Steepness_11mAWAC(indLowAmpLongT),[0.001:0.001:0.05])
+title({'Small, 10-12s Waves';[' Mean H/L = ' sprintf('%.2f',mean(Steepness_11mAWAC(indLowAmpLongT)))]})
+set(gca,'fontsize',14)
+
+subplot(2,5,10)
+histogram(Steepness_11mAWAC(indNorEaster),[0.001:0.001:0.05])
+title({'NorEasters';[' Mean H/L = ' sprintf('%.2f',mean(Steepness_11mAWAC(indNorEaster)))]})
+set(gca,'fontsize',14)
